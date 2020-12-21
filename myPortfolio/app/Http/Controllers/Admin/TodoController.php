@@ -59,7 +59,6 @@ class TodoController extends Controller
     
   public function update(Request $request)
   {
-    echo '通りました';
     // Validationをかける
     $this->validate($request, Todo::$rules);
     // Todo Modelからデータを取得する
