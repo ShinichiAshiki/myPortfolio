@@ -1,14 +1,14 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', 'todoの新規作成')
 
 @section('content')
     <div class="container">
+        <h2>タスク新規作成</h2>
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <h2>todo新規作成</h2>
 
                 <form action="{{ action('Admin\TodoController@create') }}" method="post" enctype="multipart/form-data">
-
+                @csrf
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -46,12 +46,12 @@
                                ?>
                             </select>
                         </div>
-                    </div>
-
-
                     {{ csrf_field() }}
-                    <input type="submit" class="create-btn" value="登録">
+                    <div class="text-right col-sm-12 col-md-12">
+                        <input type="submit" class="my-4 btn btn-secondary" value="登録">
+                    </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection

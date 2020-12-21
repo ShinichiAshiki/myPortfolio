@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', '登録済み予定の一覧')
 
 @section('content')
@@ -31,3 +31,4 @@
     </tbody>
   </table>
 </div>
+@endsection

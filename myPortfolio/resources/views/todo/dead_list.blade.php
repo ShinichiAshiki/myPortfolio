@@ -1,25 +1,9 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', '登録済み予定の一覧')
 
 @section('content')
 <div class="container">
   <h2>期限切れ予定一覧</h2>
-
-  <div>
-    <div>
-      <form action="{{ action('Admin\TodoController@search_dead_list') }}" method="post">
-        <div>
-          <div class="search-box">
-            <div class="search">
-              <input type="text" name="cond_title" placeholder="タイトル">
-              {{ csrf_field() }}
-              <input type="submit" class="search-btn" value="検索">
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
   <table class="table">
       <thead class="table table-dark">
         <tr>
@@ -50,3 +34,4 @@
       </tbody>
     </table>
   </div>
+  @endsection

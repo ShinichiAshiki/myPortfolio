@@ -27,7 +27,9 @@ Route::group(['prefix' => 'todo/'], function() {
         Route::get('complete', 'Admin\TodoController@complete');
         Route::get('complete_list', 'Admin\TodoController@complete_list');
         Route::get('incomplete', 'Admin\TodoController@incomplete');
-        Route::get('sort', 'Admin\TodoController@sort');
+        Route::get('sortPri', 'Admin\TodoController@sortPri');
+        Route::get('sortId', 'Admin\TodoController@sortId');
+        Route::get('sortDeadLine', 'Admin\TodoController@sortDeadLine');
         Route::get('dead_list', 'Admin\TodoController@dead_list');
         Route::post('dead_list', 'Admin\TodoController@search_dead_list');
     });

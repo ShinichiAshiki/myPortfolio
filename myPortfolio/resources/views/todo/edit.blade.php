@@ -1,4 +1,4 @@
-@extends('layouts.layouts')
+@extends('layouts.layout')
 @section('title', '予定の編集')
 
 @section('content')
@@ -45,3 +45,4 @@
             </div>
         </div>
     </div>
+@endsection

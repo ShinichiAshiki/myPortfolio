@@ -40,7 +40,7 @@ class TodoController extends Controller
     } else {
         // それ以外はすべて取得する
         $todos = Todo::where('is_complete', 0)
-        ->orderBy('priority', 'desc')
+        ->orderBy('id', 'asc')
         ->get();
     }
     $today = Carbon::today();
@@ -111,11 +111,31 @@ class TodoController extends Controller
     return redirect()->back();
   }
 
-  public function sort(Request $request)
+  public function sortPri(Request $request)
   {
     $cond_title = $request->cond_title;
     $todos = Todo::where('is_complete',0)
     ->orderBy('priority', 'asc')
+    ->get();
+    $today = Carbon::today();
+    return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title, 'today' => $today]);
+  }
+  
+  public function sortId(Request $request)
+  {
+    $cond_title = $request->cond_title;
+    $todos = Todo::where('is_complete',0)
+    ->orderBy('id', 'asc')
+    ->get();
+    $today = Carbon::today();
+    return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title, 'today' => $today]);
+  }
+
+  public function sortDeadLine(Request $request)
+  {
+    $cond_title = $request->cond_title;
+    $todos = Todo::where('is_complete',0)
+    ->orderBy('deadline', 'asc')
     ->get();
     $today = Carbon::today();
     return view('todo.index', ['todos' => $todos, 'cond_title' => $cond_title, 'today' => $today]);
