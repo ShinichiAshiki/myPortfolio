@@ -13,8 +13,8 @@
                 </div>
                 <div class="my-4">
                     <a href="{{ action('Admin\TodoController@add') }}" role="button" class="btn btn-primary mx-2">新規作成</a>
-                    <a href="todo/complete_list" role="button" class="btn btn-primary mx-2">完了タスク</a>
-                    <a href="todo/dead_list" role="button" class="btn btn-primary mx-2">期限切れタスク</a>
+                    <a href="complete_list" role="button" class="btn btn-primary mx-2">完了タスク</a>
+                    <a href="dead_list" role="button" class="btn btn-primary mx-2">期限切れタスク</a>
                 </div>
             </form>
         </div>
